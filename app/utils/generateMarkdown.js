@@ -1,4 +1,6 @@
-# readMe4U
+// function to generate markdown for README
+function generateMarkdown(data) {
+  return `# ${data.title}
 
   ## Table of Contents
 
@@ -12,7 +14,7 @@
   
   ## Description
 
-  This is a commandline application that generates a README.md file in the current directory using user responses to given prompts. In fact, this README was generated using this application!
+  ${data.description}
 
   ## Installation
 
@@ -20,21 +22,21 @@
   
   ------
 
-    npm install or npm i
+    ${data.install}
 
   ------
 
   ## Usage
 
-  Additional information about this application's use: n/a
+  Additional information about this application's use: ${data.usage}
 
   ## License
 
-  This application operates under a MIT license. 
+  This application operates under a ${data.license} license. 
 
   ## Contributing
 
-  You can go to the Github repo for this here: https://github.com/longhike/readme4u
+  You can go to the Github repo for this here: https://github.com/${data.github}/${data.repo}
 
   ## Testing
 
@@ -42,12 +44,15 @@
 
   ------
 
-    n/a
-    
+    ${data.test}
+
   ------
 
   ## Questions
 
-  For any questions, you can reach me at sam.ascheim@gmail.com.
+  For any questions, you can reach me at ${data.email}.
 
-  
+  `;
+}
+
+module.exports = generateMarkdown;
